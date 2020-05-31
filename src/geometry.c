@@ -168,3 +168,9 @@ int input_circles()
     }
     return 0;
 }
+
+void mfree(float* all_circles, float* circles_radius)
+{
+    free(all_circles);
+    free(circles_radius);
+}
