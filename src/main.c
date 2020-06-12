@@ -1,4 +1,6 @@
-#include "geometry.h"
+#include "calculating_circles.h"
+#include "input_circles.h"
+#include "intersection_circles.h"
 #include <stdio.h>
 #include <stdlib.h>
 
