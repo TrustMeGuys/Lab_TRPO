@@ -5,7 +5,7 @@ CC=gcc
 CFLAGS=-c -Wall -Werror
 LDFLAGS=-Wall -Werror
 SOURCES=main.c calculating_circles.c input_circles.c intersection_circles.c
-SOURCES= main_test.c input_circles.c test_input_cirles.c
+SOURCES= main_test.c input_circles.c test_input_circles.c
 VPATH=src test
 
 .PHONY: all clean
