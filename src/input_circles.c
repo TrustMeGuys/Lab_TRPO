@@ -4,6 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int check(int number)
+{
+    if (number <= 0) {
+        printf("Вы ввели что-то другое.\n");
+        exit(1);
+    } else
+        return 0;
+}
 int input_coordinates(
         int number_circles, float* all_circles, float* circles_radius)
 {
@@ -17,10 +25,7 @@ int input_coordinates(
         scanf("%f", &y);
         printf("\nВведите радиус окружности:\n");
         scanf("%f", &radius);
-        if (radius <= 0) {
-            printf("Вы ввели что-то другое...\n");
-            exit(1);
-        }
+        check(radius);
         all_circles[j] = x;
         all_circles[j + 1] = y;
         circles_radius[i] = radius;
@@ -35,10 +40,7 @@ int input_circles()
     int number_circles = 0;
     printf("Введите количество окружностей:\n");
     scanf("%d", &number_circles);
-    if (number_circles <= 0) {
-        printf("Вы ввели что-то не то...");
-        exit(1);
-    }
+    check(number_circles);
     int f = number_circles * 2;
     float *all_circles, *circles_radius;
     all_circles = (float*)malloc(f * sizeof(float));
