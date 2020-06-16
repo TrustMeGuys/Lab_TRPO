@@ -1,5 +1,5 @@
 #include <ctest.h>
-#include <main.h>
+#include <input_circles.h>
 
 CTEST(input_number_circles, correct_number_1)
 {
