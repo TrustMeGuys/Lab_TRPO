@@ -8,7 +8,7 @@ int check(int number)
 {
     if (number <= 0) {
         printf("Вы ввели что-то другое.\n");
-        exit(1);
+        return 1;
     } else
         return 0;
 }
@@ -40,7 +40,10 @@ int input_circles()
     int number_circles = 0;
     printf("Введите количество окружностей:\n");
     scanf("%d", &number_circles);
-    check(number_circles);
+    int n = check(number_circles);
+    if (n == 1) {
+        exit(1);
+    }
     int f = number_circles * 2;
     float *all_circles, *circles_radius;
     all_circles = (float*)malloc(f * sizeof(float));

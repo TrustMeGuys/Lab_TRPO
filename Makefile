@@ -5,7 +5,7 @@ CC=gcc
 CFLAGS=-c -Wall -Werror
 LDFLAGS=-Wall -Werror
 SOURCES=main.c calculating_circles.c input_circles.c intersection_circles.c
-SOURCES_TEST= main_test.c input_circles.c test_input_circles.c
+SOURCES_TEST= main-test.c input_circles.c test_input_circles.c calculating_circles.c intersection_circles.c
 VPATH=src test
 
 .PHONY: all clean
@@ -18,7 +18,7 @@ all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS) $(OBJECTS_TEST)
 	$(CC) $(LDFLAGS) $(OBJECTS) -lm -o bin/main.exe
-	$(CC) $(LDFLAGS) $(OBJECTS) -o bin/main_test.exe
+	$(CC) $(LDFLAGS) $(OBJECTS_TEST) -lm -o bin/main_test.exe
 	./bin/main_test.exe
 
 $(OBJ_CATALOG)/%.o: %.c
@@ -26,5 +26,6 @@ $(OBJ_CATALOG)/%.o: %.c
 
 $(OBJ_CATALOG_TEST)/%.o: %.c
 	$(CC) -I thirdparty -I src $(CFLAGS) $< -o $@
+
 clean:
 	rm -rf $(OBJ_CATALOG)/*.o $(OBJ_CATALOG_TEST)/*.o bin/*.exe

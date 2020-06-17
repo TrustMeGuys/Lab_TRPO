@@ -1,5 +1,7 @@
+#include "calculating_circles.h"
+#include "input_circles.h"
+#include "intersection_circles.h"
 #include <ctest.h>
-#include <input_circles.h>
 
 CTEST(input_number_circles, correct_number_1)
 {
@@ -8,6 +10,7 @@ CTEST(input_number_circles, correct_number_1)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, correct_number_2)
 {
     const int a = 10;
@@ -15,6 +18,7 @@ CTEST(input_number_circles, correct_number_2)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, correct_number_3)
 {
     const int a = 40;
@@ -22,6 +26,7 @@ CTEST(input_number_circles, correct_number_3)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, correct_number_4)
 {
     const int a = 6;
@@ -29,6 +34,7 @@ CTEST(input_number_circles, correct_number_4)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, correct_number_5)
 {
     const int a = 100;
@@ -36,6 +42,7 @@ CTEST(input_number_circles, correct_number_5)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_1)
 {
     const int a = 0;
@@ -43,13 +50,15 @@ CTEST(input_number_circles, incorrect_number_1)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_2)
 {
-    const float a = 1.5;
+    const float a = -1;
     const int result = check(a);
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_3)
 {
     const int a = -5;
@@ -57,13 +66,15 @@ CTEST(input_number_circles, incorrect_number_3)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_4)
 {
-    const float a = 467.23;
+    const float a = -467;
     const int result = check(a);
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_5)
 {
     const int a = -1000;
@@ -71,6 +82,7 @@ CTEST(input_number_circles, incorrect_number_5)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_number_circles, incorrect_number_6)
 {
     const float a = -0.6;
@@ -78,6 +90,7 @@ CTEST(input_number_circles, incorrect_number_6)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, correct_number_1)
 {
     const int a = 1;
@@ -85,6 +98,7 @@ CTEST(input_radius_circles, correct_number_1)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, correct_number_2)
 {
     const int a = 4567;
@@ -92,6 +106,7 @@ CTEST(input_radius_circles, correct_number_2)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, correct_number_3)
 {
     const int a = 28;
@@ -99,6 +114,7 @@ CTEST(input_radius_circles, correct_number_3)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, correct_number_4)
 {
     const float a = 34.5;
@@ -106,6 +122,7 @@ CTEST(input_radius_circles, correct_number_4)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, correct_number_5)
 {
     const float a = 234.523;
@@ -113,6 +130,7 @@ CTEST(input_radius_circles, correct_number_5)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, incorrect_number_1)
 {
     const int a = -1;
@@ -120,6 +138,7 @@ CTEST(input_radius_circles, incorrect_number_1)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, incorrect_number_2)
 {
     const float a = -453.2334;
@@ -127,6 +146,7 @@ CTEST(input_radius_circles, incorrect_number_2)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, incorrect_number_3)
 {
     const int a = 0;
@@ -134,6 +154,7 @@ CTEST(input_radius_circles, incorrect_number_3)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
+
 CTEST(input_radius_circles, incorrect_number_4)
 {
     const float a = 0.3232241;
@@ -141,7 +162,8 @@ CTEST(input_radius_circles, incorrect_number_4)
     const int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-CTEST(input_radius_circles, incorrect_number_1)
+
+CTEST(input_radius_circles, incorrect_number_5)
 {
     const int a = -0.234234;
     const int result = check(a);
