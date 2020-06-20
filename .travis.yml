@@ -2,4 +2,5 @@ language: c
 compiler: gcc
 script:
    - make
-   - git ls-files sources/ | xargs clang-format && git diff --exit code
+   - git ls-files sources/ | xargs clang-format  && git diff --exit-code
+   
